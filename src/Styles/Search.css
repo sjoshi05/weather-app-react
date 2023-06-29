@@ -1,0 +1,67 @@
+.gridContainer {
+  margin: 0 auto;
+  width: 75vw;
+}
+
+.searchGrid {
+  display: grid;
+  grid-template-columns: auto 50px;
+  column-gap: 3px;
+  margin: 0 auto;
+}
+
+.searchGrid div {
+  align-items: center;
+  display: flex;
+}
+.searchBox {
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 30px;
+  box-shadow: 1px 1px 3px rgb(0, 0, 0);
+  display: inline-flex;
+  justify-content: space-between;
+  justify-self: right;
+  margin: 3px;
+  width: 100%;
+}
+
+.searchButton {
+  background-color: transparent;
+  border: transparent;
+  color: rgb(255, 255, 255);
+  padding: 5px 10px;
+  margin: 0px 3px;
+  font-size: 16px;
+}
+.searchField {
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  margin: 5px 0px;
+  padding: 10px 10px 10px 25px;
+  width: 100%;
+}
+.currentLocation {
+  justify-content: left;
+}
+
+.currentLocation button {
+  background-color: rgb(21, 74, 189);
+  border-radius: 30px;
+  border: 1px solid rgb(21, 74, 189);
+  box-shadow: 2px 2px 2px rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  padding: 10px 15px;
+  font-size: 18px;
+}
+
+.currentLocation button:hover {
+  background-color: rgb(51, 96, 194);
+  border-radius: 30px;
+  border: 1px solid rgb(21, 74, 189);
+  box-shadow: 2px 2px 2px rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  padding: 10px 15px;
+  font-size: 18px;
+}

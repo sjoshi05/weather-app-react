@@ -1,0 +1,30 @@
+body {
+  background: linear-gradient(
+    89deg,
+    rgb(21, 74, 189) 0.1%,
+    rgb(26, 138, 211) 51.5%,
+    rgb(72, 177, 234) 100.2%
+  );
+}
+.container {
+  background: rgb(255, 255, 255);
+  border-radius: 10px;
+  display: block;
+  font-family: "Roboto", sans-serif;
+  margin: 15px auto;
+  width: 85%;
+  padding: 5px;
+
+  text-align: center;
+}
+
+h1 {
+  font-size: 35px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.footer {
+  font-size: 12px;
+  margin: 10px 5px 5px 5px;
+}

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 
+import "../Styles/Search.css";
+
 export default function Search() {
   let [city, setCity] = useState(null);
   let [weather, setWeather] = useState({});
@@ -8,13 +10,24 @@ export default function Search() {
 
   let form = (
     <form onSubmit={HandleSubmit}>
-      <input
-        type="search"
-        name="city"
-        placeholder="Enter a city"
-        onChange={UpdateCity}
-      />
-      <input type="submit" value="Search" />
+      <div className="gridContainer">
+        <div className="searchGrid">
+          <div className="searchBox">
+            <input
+              type="search"
+              name="city"
+              placeholder="Enter a city"
+              onChange={UpdateCity}
+              className="searchField"
+            />
+            <input type="submit" value="🔍" className="searchButton " />
+          </div>
+
+          <div className="currentLocation">
+            <button type="button">📍</button>
+          </div>
+        </div>
+      </div>
     </form>
   );
 
