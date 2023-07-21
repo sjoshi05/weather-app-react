@@ -1,5 +1,6 @@
 import React from "react";
 import FormattedDate from "./FormattedDate.js";
+import WeatherIcon from "./WeatherIcon.js";
 
 export default function CurrentWeatherInfo({ data }) {
   return (
@@ -26,7 +27,7 @@ export default function CurrentWeatherInfo({ data }) {
           <strong>Wind: </strong> {Math.round(data.wind)} km/h
         </li>
         <li>
-          <img src={data.icon} alt={data.description} />
+          <WeatherIcon code={data.icon} />
         </li>
       </ul>
     </div>
