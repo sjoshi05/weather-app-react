@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 
 import "../Styles/Search.css";
+import FormattedDate from "./FormattedDate.js";
 
 export default function Search({ defaultCity }) {
   const [city, setCity] = useState(null);
@@ -39,7 +40,7 @@ export default function Search({ defaultCity }) {
       humidity: response.data.temperature.humidity,
       wind: response.data.wind.speed,
       icon: `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`,
-      date: response.data.time,
+      date: new Date(response.data.time * 1000),
     });
   }
 
@@ -64,6 +65,10 @@ export default function Search({ defaultCity }) {
           <li>
             <strong>City: </strong>
             {currentWeather.city}
+          </li>
+          <li>
+            <strong>Last Updated: </strong>{" "}
+            <FormattedDate date={currentWeather.date} />
           </li>
           <li>
             <strong>Current Temperature: </strong>
