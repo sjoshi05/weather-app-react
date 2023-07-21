@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import axios from "axios";
 
 import "../Styles/Search.css";
-import FormattedDate from "./FormattedDate.js";
+import CurrentWeatherInfo from "./CurrentWeatherInfo";
 
 export default function Search({ defaultCity }) {
-  const [city, setCity] = useState(null);
+  const [city, setCity] = useState(defaultCity);
   const [currentWeather, setCurrentWeather] = useState({ loaded: false });
 
   let form = (
@@ -48,8 +48,7 @@ export default function Search({ defaultCity }) {
     setCity(event.target.value);
   }
 
-  function HandleSubmit(event) {
-    event.preventDefault();
+  function Search() {
     let apiKey = "e4f4205dbc58tb74afad5c9e48f3co33";
     let units = "metric";
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${units}`;
@@ -57,43 +56,20 @@ export default function Search({ defaultCity }) {
     axios.get(apiUrl).then(ShowCurrentWeather);
   }
 
+  function HandleSubmit(event) {
+    event.preventDefault();
+    Search();
+  }
+
   if (currentWeather.loaded) {
     return (
       <div>
         {form}
-        <ul>
-          <li>
-            <strong>City: </strong>
-            {currentWeather.city}
-          </li>
-          <li>
-            <strong>Last Updated: </strong>{" "}
-            <FormattedDate date={currentWeather.date} />
-          </li>
-          <li>
-            <strong>Current Temperature: </strong>
-            {Math.round(currentWeather.temperature)}°C
-          </li>
-          <li>
-            <strong>Description: </strong> {currentWeather.description}
-          </li>
-          <li>
-            <strong>Humidity: </strong> {currentWeather.humidity}%
-          </li>
-          <li>
-            <strong>Wind: </strong> {Math.round(currentWeather.wind)} km/h
-          </li>
-          <li>
-            <img src={currentWeather.icon} alt={currentWeather.description} />
-          </li>
-        </ul>
+        <CurrentWeatherInfo data={currentWeather} />
       </div>
     );
   } else {
-    let apiKey = "e4f4205dbc58tb74afad5c9e48f3co33";
-    let units = "metric";
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${defaultCity}&key=${apiKey}&units=${units}`;
-
-    axios.get(apiUrl).then(ShowCurrentWeather);
+    Search();
+    return "Loading...";
   }
 }
