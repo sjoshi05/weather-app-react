@@ -1,6 +1,7 @@
 import React from "react";
 import FormattedDate from "./FormattedDate.js";
 import WeatherIcon from "./WeatherIcon.js";
+import CurrentWeatherTemp from "./CurrentWeatherTemp.js";
 
 export default function CurrentWeatherInfo({ data }) {
   return (
@@ -15,7 +16,7 @@ export default function CurrentWeatherInfo({ data }) {
         </li>
         <li>
           <strong>Current Temperature: </strong>
-          {Math.round(data.temperature)}°C
+          <CurrentWeatherTemp celsius={data.temperature} />
         </li>
         <li>
           <strong>Description: </strong> {data.description}
