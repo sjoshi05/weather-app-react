@@ -1,0 +1,21 @@
+.CurrentWeatherInfo ul {
+  list-style-type: none;
+}
+
+.CurrentWeatherInfo .currentIcon canvas {
+  width: 50px;
+}
+
+.CurrentWeatherInfo .currentTemp {
+  font-size: 45px;
+}
+
+.CurrentWeatherInfo .city {
+  font-size: 35px;
+  font-weight: bold;
+  margin-left: 15vw;
+}
+
+.CurrentWeatherInfo .currentSummary {
+  font-size: 18px;
+}

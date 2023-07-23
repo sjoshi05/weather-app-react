@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function CurrentWeatherTemp({ celsius }) {
   const [unit, setUnit] = useState("celsius");
@@ -16,11 +17,15 @@ export default function CurrentWeatherTemp({ celsius }) {
   if (unit === "celsius") {
     return (
       <div className="CurrentWeatherTemp">
-        {Math.round(celsius)}°C |{" "}
-        <a href="/" onClick={showFahrenheit}>
+        {Math.round(celsius)}
+        <span className="fs-6 align-text-top p-1 ">
           {" "}
-          °F{" "}
-        </a>
+          °C |{" "}
+          <a href="/" onClick={showFahrenheit}>
+            {" "}
+            °F{" "}
+          </a>
+        </span>
       </div>
     );
   } else {
@@ -29,10 +34,13 @@ export default function CurrentWeatherTemp({ celsius }) {
     return (
       <div className="CurrentWeatherTemp">
         {Math.round(fahrenheit)}
-        <a href="/" onClick={showCelsius}>
-          °C
-        </a>
-        °F
+        <span className="fs-6 align-text-top p-1 ">
+          {""}
+          <a href="/" onClick={showCelsius}>
+            °C
+          </a>{" "}
+          | °F
+        </span>
       </div>
     );
   }

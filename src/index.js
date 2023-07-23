@@ -9,7 +9,6 @@ root.render(
   <React.StrictMode>
     <div className="container">
       <main>
-        <h1>Weather App </h1>
         <Search defaultCity="Atlanta" />
       </main>
       <footer className="footer">

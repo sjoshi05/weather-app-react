@@ -1,3 +1,8 @@
+:root {
+  --black: rgb(7, 13, 34);
+  --dark-blue: rgb(21, 74, 189);
+  --white: rgb(234, 240, 252);
+}
 body {
   background: linear-gradient(
     89deg,
@@ -5,16 +10,17 @@ body {
     rgb(26, 138, 211) 51.5%,
     rgb(72, 177, 234) 100.2%
   );
+  font-family: "Roboto", sans-serif;
+  color: var(--black);
 }
 .container {
-  background: rgb(255, 255, 255);
+  background: var(--white);
   border-radius: 10px;
   display: block;
   font-family: "Roboto", sans-serif;
   margin: 15px auto;
-  width: 85%;
   padding: 5px;
-
+  width: 850px;
   text-align: center;
 }
 
