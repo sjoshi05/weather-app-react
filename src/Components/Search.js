@@ -35,6 +35,7 @@ export default function Search({ defaultCity }) {
     setCurrentWeather({
       loaded: true,
       city: response.data.city,
+      country: response.data.country,
       temperature: response.data.temperature.current,
       description: response.data.condition.description,
       humidity: response.data.temperature.humidity,
@@ -55,6 +56,8 @@ export default function Search({ defaultCity }) {
 
     axios.get(apiUrl).then(ShowCurrentWeather);
   }
+
+  //api.shecodes.io/weather/v1/current?query=lisbon&key=e4f4205dbc58tb74afad5c9e48f3co33&units=metric
 
   function HandleSubmit(event) {
     event.preventDefault();

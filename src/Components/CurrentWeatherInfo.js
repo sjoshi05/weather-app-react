@@ -10,7 +10,9 @@ export default function CurrentWeatherInfo({ data }) {
     <div className="CurrentWeatherInfo">
       <div className="container">
         <div className="row currentWeatherGrid ">
-          <div className="col-12 city text-start">{data.city}</div>
+          <div className="col-12 city text-start">
+            {data.city}, {data.country}{" "}
+          </div>
 
           <div className="col-3 currentIcon text-end pt-2 pe-0">
             <WeatherIcon code={data.icon} />
