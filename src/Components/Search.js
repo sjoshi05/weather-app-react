@@ -3,6 +3,7 @@ import axios from "axios";
 
 import "../Styles/Search.css";
 import CurrentWeatherInfo from "./CurrentWeatherInfo";
+import Forecast from "./Forecast";
 
 export default function Search({ defaultCity }) {
   const [city, setCity] = useState(defaultCity);
@@ -36,6 +37,8 @@ export default function Search({ defaultCity }) {
       loaded: true,
       city: response.data.city,
       country: response.data.country,
+      latitude: response.data.coordinates.latitude,
+      longitude: response.data.coordinates.longitude,
       temperature: response.data.temperature.current,
       description: response.data.condition.description,
       humidity: response.data.temperature.humidity,
@@ -57,8 +60,6 @@ export default function Search({ defaultCity }) {
     axios.get(apiUrl).then(ShowCurrentWeather);
   }
 
-  //api.shecodes.io/weather/v1/current?query=lisbon&key=e4f4205dbc58tb74afad5c9e48f3co33&units=metric
-
   function HandleSubmit(event) {
     event.preventDefault();
     Search();
@@ -70,6 +71,7 @@ export default function Search({ defaultCity }) {
         {form}
         <h1>The Weather App</h1>
         <CurrentWeatherInfo data={currentWeather} />
+        <Forecast data={currentWeather} />
       </div>
     );
   } else {
