@@ -1,4 +1,5 @@
 import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import WeatherIcon from "./WeatherIcon.js";
 
@@ -23,9 +24,14 @@ export default function ForecastDay({ forecastData }) {
 
   return (
     <div className="ForecastDay">
-      <div> {Day()}</div>
-      <WeatherIcon code={forecastData.condition.icon} />
-      <span>{maxTemp}° | </span>
+      <span>
+        <strong> {Day()}</strong>
+      </span>
+      <WeatherIcon code={forecastData.condition.icon} size={36} />
+      <span>
+        {" "}
+        <strong>{maxTemp}° </strong>|{" "}
+      </span>
       <span>{minTemp}°</span>
     </div>
   );

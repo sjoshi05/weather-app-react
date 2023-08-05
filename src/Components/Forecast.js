@@ -16,7 +16,17 @@ export default function Forecast({ data }) {
   if (loaded) {
     return (
       <div className="Forecast">
-        <ForecastDay forecastData={forecast[0]} />;
+        <div className="row">
+          {forecast.map(function (dailyForecast, index) {
+            if (index < 7) {
+              return (
+                <div className="col">
+                  <ForecastDay forecastData={dailyForecast} />;{" "}
+                </div>
+              );
+            }
+          })}
+        </div>
       </div>
     );
   } else {

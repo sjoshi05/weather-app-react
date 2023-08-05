@@ -15,7 +15,7 @@ export default function CurrentWeatherInfo({ data }) {
           </div>
 
           <div className="col-3 currentIcon text-end pt-2 pe-0">
-            <WeatherIcon code={data.icon} />
+            <WeatherIcon code={data.icon} size={52} />
           </div>
           <div className="col-3 currentTemp text-start ps-2 pe-0">
             <CurrentWeatherTemp celsius={data.temperature} />

@@ -2,10 +2,6 @@
   list-style-type: none;
 }
 
-.CurrentWeatherInfo .currentIcon canvas {
-  width: 50px;
-}
-
 .CurrentWeatherInfo .currentTemp {
   font-size: 45px;
 }
