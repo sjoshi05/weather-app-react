@@ -69,7 +69,6 @@ export default function Search({ defaultCity }) {
     return (
       <div className="Search">
         {form}
-        <h1>The Weather App</h1>
         <CurrentWeatherInfo data={currentWeather} />
         <Forecast data={currentWeather} />
       </div>

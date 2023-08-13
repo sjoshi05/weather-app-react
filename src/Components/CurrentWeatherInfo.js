@@ -10,18 +10,20 @@ export default function CurrentWeatherInfo({ data }) {
     <div className="CurrentWeatherInfo">
       <div className="container">
         <div className="row currentWeatherGrid ">
-          <div className="col-12 city text-start">
-            {data.city}, {data.country}{" "}
+          <div className="col-12 city text-start ms-4 mb-1">
+            <h1>
+              {data.city}, {data.country}
+            </h1>
           </div>
 
-          <div className="col-3 currentIcon text-end pt-2 pe-0">
+          <div className="col-1 currentIcon text-end pt-1 text-center ms-5">
             <WeatherIcon code={data.icon} size={52} />
           </div>
-          <div className="col-3 currentTemp text-start ps-2 pe-0">
+          <div className="col-3 currentTemp text-start ps-0">
             <CurrentWeatherTemp celsius={data.temperature} />
           </div>
 
-          <div className="col-sm-6">
+          <div className="col-sm">
             <ul className="currentSummary text-start ps-3">
               <li>
                 <FormattedDate date={data.date} />
