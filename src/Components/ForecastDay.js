@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import WeatherIcon from "./WeatherIcon.js";
+import { UnitContext } from "../index.js";
 
 export default function ForecastDay({ forecastData }) {
+  const { unit, setUnit } = useContext(UnitContext);
+
   let maxTemp = Math.round(forecastData.temperature.maximum);
   let minTemp = Math.round(forecastData.temperature.minimum);
 

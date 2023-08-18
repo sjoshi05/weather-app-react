@@ -1,26 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./Styles/index.css";
-import Search from "./Components/Search";
 import "bootstrap";
+import "./Styles/index.css";
+import App from "./Components/App";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
   <React.StrictMode>
     <div className="container">
-      <main>
-        <Search defaultCity="Atlanta" />
-      </main>
-      <footer className="footer">
-        <a
-          href="https://github.com/sjoshi05/weather-app-react"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Open-Source Code
-        </a>{" "}
-        by Sandhya Joshi
-      </footer>
+      <App />
     </div>
   </React.StrictMode>
 );

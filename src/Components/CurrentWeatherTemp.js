@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import UnitContext from "..index.js";
 
 export default function CurrentWeatherTemp({ celsius }) {
-  const [unit, setUnit] = useState("celsius");
+  const { unit, setUnit } = useContext(UnitContext);
 
   function showFahrenheit(event) {
     event.preventDefault();
