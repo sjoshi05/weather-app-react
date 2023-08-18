@@ -1,10 +1,10 @@
 import React, { createContext, useState } from "react";
 import "bootstrap";
-import Search from "./Components/Search";
+import Search from "./Search";
 
 export const UnitContext = createContext();
 
-export default function App() {
+export function App() {
   const [unit, setUnit] = useState("celsius");
 
   return (

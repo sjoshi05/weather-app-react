@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import UnitContext from "..index.js";
+import { UnitContext } from "./App";
 
 export default function CurrentWeatherTemp({ celsius }) {
   const { unit, setUnit } = useContext(UnitContext);
