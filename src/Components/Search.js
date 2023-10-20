@@ -4,7 +4,6 @@ import axios from "axios";
 import "../Styles/Search.css";
 import CurrentWeatherInfo from "./CurrentWeatherInfo";
 import Forecast from "./Forecast";
-/*import GetCurrentLocation from "./CurrentLocation";*/
 
 export default function Search({ defaultCity }) {
   const [city, setCity] = useState(defaultCity);
@@ -35,12 +34,7 @@ export default function Search({ defaultCity }) {
     let units = "metric";
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${units}`;
 
-    axios
-      .get(apiUrl)
-      .then(ShowCurrentWeather)
-      .catch((error) => {
-        console.log(error);
-      });
+    axios.get(apiUrl).then(ShowCurrentWeather);
   }
 
   function HandleSubmit(event) {
@@ -51,21 +45,15 @@ export default function Search({ defaultCity }) {
   let form = (
     <form onSubmit={HandleSubmit}>
       <div className="gridContainer">
-        <div className="searchGrid">
-          <div className="searchBox">
-            <input
-              type="search"
-              name="city"
-              placeholder="Enter a city"
-              onChange={UpdateCity}
-              className="searchField"
-            />
-            <input type="submit" value="🔍" className="searchButton " />
-          </div>
-
-          <div className="currentLocation">
-            <button type="button" /*onClick={GetCurrentLocation}*/>📍</button>
-          </div>
+        <div className="searchBox">
+          <input
+            type="search"
+            name="city"
+            placeholder="Enter a city"
+            onChange={UpdateCity}
+            className="searchField"
+          />
+          <input type="submit" value="🔍" className="searchButton " />
         </div>
       </div>
     </form>

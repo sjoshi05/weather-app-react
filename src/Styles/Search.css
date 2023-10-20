@@ -62,25 +62,3 @@
   padding: 10px 10px 10px 25px;
   width: 100%;
 }
-.Search .currentLocation {
-  justify-content: left;
-}
-
-.Search .currentLocation button {
-  background-color: var(--dark-blue);
-  border-radius: 30px;
-  border: 1px solid var(--dark-blue);
-  box-shadow: 2px 2px 2px var(--black);
-  padding: 10px 15px;
-  font-size: 18px;
-}
-
-.Search .currentLocation button:hover {
-  background-color: rgb(51, 96, 194);
-  border-radius: 30px;
-  border: 1px solid var(--dark-blue);
-  box-shadow: 2px 2px 2px var(--black);
-  cursor: pointer;
-  padding: 10px 15px;
-  font-size: 18px;
-}
